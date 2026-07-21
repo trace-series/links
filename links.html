@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trace series — 聖地巡礼帖</title>
+<meta name="description" content="K-POPの聖地巡礼マップ「Trace series」のリンク一覧。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f8ecee;
+    --bg-deep:#f2dfe2;
+    --paper:#fffcf8;
+    --ink:#2c1a22;
+    --muted:#8a7078;
+    --hairline:rgba(44,26,34,0.14);
+    --grad-a:#2f0f1e;
+    --grad-b:#9b2942;
+    --vermillion:#b23a2e;
+    --gold:#b9902f;
+    --shadow: 0 18px 40px -20px rgba(44,20,30,0.35);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(178,58,46,0.07), transparent 40%),
+      radial-gradient(circle at 88% 92%, rgba(47,15,30,0.08), transparent 42%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    font-family:"Noto Sans JP", sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:56px 20px 40px;
+  }
+
+  .page{
+    width:100%;
+    max-width:460px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    text-align:center;
+    margin-bottom:36px;
+  }
+
+  .mark{
+    width:56px;height:56px;
+    margin:0 auto 18px;
+    border-radius:14px;
+    background:linear-gradient(135deg, var(--grad-a), var(--grad-b));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow: var(--shadow);
+    transform:rotate(-3deg);
+  }
+  .mark span{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:28px;
+    color:#f7e8ea;
+  }
+
+  h1{
+    font-family:"Cormorant Garamond", serif;
+    font-weight:500;
+    font-size:34px;
+    letter-spacing:0.02em;
+    margin:0 0 6px;
+  }
+  h1 em{
+    font-style:italic;
+    font-weight:600;
+    color:var(--grad-b);
+  }
+
+  .tagline{
+    font-family:"Noto Serif JP", serif;
+    font-size:14px;
+    color:var(--muted);
+    letter-spacing:0.04em;
+    margin:0;
+  }
+
+  .divider{
+    width:120px;
+    height:1px;
+    margin:22px auto 0;
+    background:linear-gradient(90deg, transparent, var(--hairline), transparent);
+  }
+
+  /* ---------- Stamp book ---------- */
+  .book{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+
+  .row-label{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    padding-left:4px;
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:0.12em;
+  }
+  .row-label .kanji{
+    font-family:"Noto Serif JP", serif;
+    font-size:15px;
+    color:var(--vermillion);
+    letter-spacing:0.02em;
+  }
+
+  a.card{
+    position:relative;
+    display:block;
+    background:var(--paper);
+    border:1px solid var(--hairline);
+    border-radius:4px 16px 16px 4px;
+    padding:22px 22px 20px 26px;
+    text-decoration:none;
+    color:var(--ink);
+    box-shadow: var(--shadow);
+    transition: transform .18s ease, box-shadow .18s ease;
+    overflow:hidden;
+  }
+  a.card:active{ transform:scale(0.985); }
+  @media (hover:hover){
+    a.card:hover{ transform:translateY(-3px); box-shadow:0 22px 46px -20px rgba(44,20,30,0.42); }
+  }
+
+  a.card::before{
+    /* torn left edge, pilgrimage-book feel */
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:4px;
+    background:repeating-linear-gradient(180deg, var(--vermillion) 0 6px, transparent 6px 10px);
+    opacity:0.55;
+  }
+
+  .stamp{
+    position:absolute;
+    top:14px; right:16px;
+    width:58px;height:58px;
+    border-radius:50%;
+    border:2px solid var(--vermillion);
+    color:var(--vermillion);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Noto Serif JP", serif;
+    font-weight:700;
+    font-size:20px;
+    transform:rotate(9deg);
+    opacity:0.9;
+    -webkit-mask-image: radial-gradient(circle, black 96%, transparent 100%);
+  }
+  .stamp.faded{ opacity:0.28; border-style:dashed; }
+
+  .card-eyebrow{
+    font-size:11px;
+    letter-spacing:0.14em;
+    color:var(--muted);
+    margin:0 0 8px;
+  }
+
+  .card-title{
+    font-family:"Cormorant Garamond", serif;
+    font-size:26px;
+    font-weight:500;
+    margin:0 0 4px;
+    padding-right:70px;
+  }
+  .card-title em{
+    font-style:italic;
+    font-weight:600;
+    color:var(--grad-b);
+  }
+
+  .card-jp{
+    font-family:"Noto Serif JP", serif;
+    font-size:13.5px;
+    color:var(--muted);
+    margin:0 0 14px;
+    padding-right:60px;
+    line-height:1.7;
+  }
+
+  .card-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    color:var(--grad-b);
+    font-weight:700;
+  }
+  .card-cta .arrow{ transition: transform .18s ease; }
+  a.card:hover .arrow{ transform:translateX(3px); }
+
+  /* soon card */
+  .card.soon{
+    background:transparent;
+    border:1.5px dashed var(--hairline);
+    box-shadow:none;
+    pointer-events:none;
+  }
+  .card.soon::before{ display:none; }
+  .card.soon .card-title, .card.soon .card-jp{ color:var(--muted); }
+  .card.soon .card-title em{ color:var(--muted); }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:40px;
+    text-align:center;
+  }
+  footer p{
+    font-size:11.5px;
+    color:var(--muted);
+    letter-spacing:0.05em;
+    margin:0;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    a.card{ transition:none; }
+  }
+
+  @keyframes riseIn{
+    from{ opacity:0; transform:translateY(10px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .book > *{
+    animation: riseIn .5s ease both;
+  }
+  .book > *:nth-child(1){animation-delay:.02s;}
+  .book > *:nth-child(2){animation-delay:.08s;}
+  .book > *:nth-child(3){animation-delay:.14s;}
+  .book > *:nth-child(4){animation-delay:.20s;}
+  @media (prefers-reduced-motion: reduce){
+    .book > *{ animation:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="mark"><span>T</span></div>
+      <h1>Trace <em>series</em></h1>
+      <p class="tagline">推しの足跡を、地図に。</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="book">
+      <div class="row-label"><span class="kanji">壱</span><span>2026.06 RELEASED</span></div>
+      <a class="card" href="https://trace-series.github.io/trace-ive/trace-ive.html">
+        <div class="stamp">巡</div>
+        <p class="card-eyebrow">PILGRIMAGE MAP</p>
+        <h2 class="card-title">Trace <em>IVE</em></h2>
+        <p class="card-jp">IVEの聖地を、みんなで育てるファンマップ。</p>
+        <span class="card-cta">アプリを開く <span class="arrow">→</span></span>
+      </a>
+
+      <div class="row-label"><span class="kanji">弐</span><span>2026.07 RELEASED</span></div>
+      <a class="card" href="https://trace-series.github.io/trace-illit/trace-illit.html">
+        <div class="stamp">巡</div>
+        <p class="card-eyebrow">PILGRIMAGE MAP</p>
+        <h2 class="card-title">Trace <em>ILLIT</em></h2>
+        <p class="card-jp">ILLITの聖地を、みんなで育てるファンマップ。</p>
+        <span class="card-cta">アプリを開く <span class="arrow">→</span></span>
+      </a>
+
+      <div class="row-label"><span class="kanji">参</span><span>2026.08.12 RELEASE予定</span></div>
+      <div class="card soon">
+        <div class="stamp faded">待</div>
+        <p class="card-eyebrow">PILGRIMAGE MAP</p>
+        <h2 class="card-title">Trace <em>Hearts2Hearts</em></h2>
+        <p class="card-jp">Hearts2Heartsの聖地巡礼帖、8月12日オープン予定。</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>© Trace series</p>
+    </footer>
+  </div>
+</body>
+</html>
