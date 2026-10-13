@@ -216,6 +216,20 @@
   .card.soon .card-title, .card.soon .card-jp{ color:var(--muted); }
   .card.soon .card-title em{ color:var(--muted); }
 
+  /* ---------- SNS ---------- */
+  .sns{ margin-top:36px; text-align:center; }
+  .sns-label{ font-size:11.5px; letter-spacing:0.2em; color:var(--muted); margin:0 0 12px; }
+  .sns-row{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+  .sns-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:999px;
+    background:var(--paper); color:var(--ink); text-decoration:none;
+    border:1px solid var(--hairline); box-shadow:var(--shadow);
+    font-size:14px; font-weight:500;
+  }
+  .sns-btn svg{ width:18px; height:18px; flex:none; }
+  .sns-btn small{ color:var(--muted); font-size:12px; }
+
   /* ---------- Footer ---------- */
   footer{
     margin-top:40px;
@@ -295,6 +309,16 @@
         <p class="card-jp">Hearts2Heartsの聖地を、みんなで育てるファンマップ。</p>
         <span class="card-cta">アプリを開く <span class="arrow">→</span></span>
       </a>
+    </div>
+
+    <div class="sns">
+      <p class="sns-label">FOLLOW US</p>
+      <div class="sns-row">
+        <a class="sns-btn" href="https://www.tiktok.com/@trace_series" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.4 2.3 1.9 3.9 4.2 4.1v3.1c-1.5.1-2.9-.4-4.2-1.2v6.3c0 3.6-2.6 6.2-6.1 6.2S4.4 18.9 4.4 15.6c0-3.5 3-6.1 6.6-5.6v3.2c-1.7-.4-3.3.8-3.3 2.4 0 1.4 1.1 2.6 2.7 2.6 1.6 0 2.8-1.1 2.8-3.1V3h3.4z"/></svg>
+          TikTok <small>@trace_series</small>
+        </a>
+      </div>
     </div>
 
     <footer>
