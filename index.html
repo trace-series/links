@@ -325,5 +325,18 @@
       <p>© Trace series</p>
     </footer>
   </div>
+  <script>
+  // 開いたURLの utm_〜 を、各アプリへのリンクに引き継ぐ（GA4で流入元を数えるため）
+  (function(){
+    try{
+      var q=new URLSearchParams(location.search), keep=new URLSearchParams();
+      q.forEach(function(v,k){ if(k.indexOf('utm_')===0) keep.set(k,v); });
+      var qs=keep.toString(); if(!qs) return;
+      document.querySelectorAll('a.card[href*="trace-series.github.io/trace-"]').forEach(function(a){
+        a.href += (a.href.indexOf('?')<0 ? '?' : '&') + qs;
+      });
+    }catch(e){}
+  })();
+  </script>
 </body>
 </html>
